@@ -55,7 +55,7 @@ in this case i am using EC2 instance
 * record type: route traffic to an IPV4 Address and some aws resources
 * Value: pass the EC2 public IP.
 
-Now we can see How to setup A Load balancer as a A-record Weighted Routing:
+Now we can see How to setup A Load balancer as a A-record simple Routing:
 --------------------------------------------------------------------------
 
 * For this we have to create VPC, Subnets 1 public and 1 Private, Igw, route tables- one private route table and one public route table.
