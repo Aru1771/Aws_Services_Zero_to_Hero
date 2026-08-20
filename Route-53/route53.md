@@ -58,7 +58,7 @@ in this case i am using EC2 instance
 Now we can see How to setup A Load balancer as a A-record simple Routing:
 --------------------------------------------------------------------------
 
-* For this we have to create VPC, Subnets 1 public and 1 Private, Igw, route tables- one private route table and one public route table.
+* For this we have to create VPC-1, Subnets 1 public and 1 Private, Igw, route tables- one private route table and one public route table.
 * we have to attach publich subnet to Public route table use subnet association and we have to add IGW into the Route.
 * Then we have to launch the EC2 instance in the Public Subnet.
 * we have to create a traget group with that Ec2 instance.
@@ -68,6 +68,36 @@ Now the Route53 configration will start:
 * we have to create one more a Record with value Alias and App loadbalancer.
 * we have to give region
 * we have to select LB.
+  
+Now we can see How to setup A two Load balancer in route 53 and how we can do weighted routing:
+-------------------------------------------------------------------------------------------------
+
+
+* For this we have to create VPC-2, Subnets 1 public and 1 Private, Igw, route tables- one private route table and one public route table.
+* we have to attach publich subnet to Public route table use subnet association and we have to add IGW into the Route.
+* Then we have to launch the EC2 instance in the Public Subnet.
+* we have to create a traget group with that Ec2 instance.
+* Then we have to launch the LB and we have to attch the target group with listner With HTTP and Port 80.
+
+
+Now the Route53 configration will start:
+
+* For weigted routing we have to select Wetigted routing and the A record.
+* in the form we have to select "Define weight records".
+* Hera we have to give weight like 128 is 50% in 256.
+* RecordID: A record for Lb1 or LB2
+
+we have to select both the records and create a A records.
+
+Now we can see How to setup A two Load balancer in route 53 and how we can do geolocation routing:
+---------------------------------------------------------------------------------------------------
+
+* By using this we can send the particular location request to specific loadbalancer.
+
+Now we can see How to setup A two Load balancer in route 53 and how we can do geolocation routing:
+--------------------------------------------------------------------------------------------------
+
+* By using this we will route the traffic to secondrey load balncer when primary load balncer is fail to serves the request.
   
 
 
