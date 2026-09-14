@@ -1,0 +1,117 @@
+Route 53:
+=========
+
+what is Route 53 ?
+
+why Route 53 ?
+
+* Route53 provides DNS service(Domaine Name System) provided by AWS.
+
+ 
+
+1.route53 will provide Domine registry.
+========================================
+
+2.DNS operations(Hosted Zone):
+================================
+ if we want to map any domine to IP we can do it via DNS operations.
+
+* if we register any Domaine in GoDaddy or Route53 we will get 4 Naming servers.
+
+* at the time of creating hosted zone in Route53 we will get naming servers again.
+
+Eg: if you register domine in GoDaddy and we want to manage domine from AWS Route53 then we will create a hosted zone in DNS operations and we have to replace GoDaddy Naming servers in Aws Route53 hosted zone.
+
+at the time of creating hosted zone we will get 4 naming servers. if we want to manage AWS route53 hosted zone via GoDaddy we have to replace hosted zone naming servers in GoDaddy.
+
+* we have a Domine xyz.com and for that we have another Sub-Domine that we want to map to another IP address. this action also we will manage by  Hosted Zone.
+
+* in Hosted zone we have two types public and private Hosted zones.
+
+Public Hosted Zone:
+-------------------
+* if we hosted our Domine Public Hosted Zone that domine will be GBL accessible by every one.
+* it will update in GBL DBS records.
+
+Private Hosted Zone:
+--------------------
+* it will not update in GBL DNS records.
+
+* At the time of creating Private Hosted zone we have to attach a VPC. so records will update only in the VPC router.
+
+3.Health Checks:
+=================
+
+* it will check health of the services running in the hosted machine in the VPC. By providing the IP, Domine, Path and we will set intervals and we will attach this with cloud watch and SNS topic to trigger alerts to us.
+
+4.Routing policies: 
+===================
+
+how we can use this ?
+
+for eg we will host our app in us data center and India data center for US(America) customers. so i want US  customers 
+will access the app from US data center and for Indians i want them access the app from India. so at that time by using This Routing Policies i will create one police called latency_Based_Ploice and i will add both the US and India related end points. 
+
+so if someone requested from US this Police will calculate the latency and it will send the request to nearest location.
+
+===========================
+Now Deep-Dive on Route53:
+===========================
+
+what is TLD ? (Top Level domine)
+
+means the extension of the domine like (.com, .in, .org) 
+
+now we can see simple comparison this DNS and Mobile related things for easy understanding:
+
+DNS                                                                            Mobile
+----                                                                         ----------
+
+1. ICANN- Internet corporation Assigning of Numbers and Names        1. TRAI -
+
+name = domine
+number = IP address
+
+2 . Domine registers                                                 2. network providers
+    Amazon Register                                                    jio
+    Godaddy                                                            airtel
+    Gandi.net(aws managed one)
+
+
+3. Domine Registry                                                   3. MSC- mobile switching center
+   it will provide TLD.
+--> verisign company will provide .com,.in
+
+
+4. Domine transfer                                                    4. portability 
+   we can change provider                                                like changing mobile number to jio to airtel 
+
+
+ 
+Steps to create a domine in Route53:
+------------------------------------
+
+step:1 - provide unique Domine name. * with in 7 days make payment
+
+step:2 - provide contact details like email.
+
+after register the Domine name in route53 in backend.
+
+it will automatically create one hosted zone and create naming servers (NS records). so this NS records point out to Hosted Zone and Hosted zone will point out to Domine name.
+
+
+now this Hosted Zone 4 NS records will forward to ---> Amazon Registers this Amazon registers will store the 4 NS records and create new 4 NS records for Amazon Registers and Forward the Amazon Registers 4 NS records to Amazon Registry--- > Verisign this Vreisign company stores the 4 NS records of Registers and then it will create another 4 new NS records for Domine registry this registry NS records will stored in copies one will store in registry and another will store in (WHOIS)DATABASE and root level Registry.
+
+
+at the time of creating Domine the flow will work on above order and if some one is browsing our domine from Net the flow will work in reverse order.
+
+
+DNS is the service which maps our domine name with the IP address of load balancer.
+
+DNS will do keep lot of records.
+
+In hosted zone we have to create a DNS records
+
+It will support health checks.
+
+Domine registration --> hosted zones-- hear we will give DNS records 
