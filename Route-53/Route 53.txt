@@ -20,7 +20,7 @@ why Route 53 ?
 
 * at the time of creating hosted zone in Route53 we will get naming servers again.
 
-Eg: if you register domine in GoDaddy and we want to manage domine from AWS Route53 then we will create a hosted zone in DNS operations and we have to replace GoDaddy Naming servers in Aws Route53 hosted zone.
+Eg: if you register domine in GoDaddy and we want to manage domine from AWS Route53 then we will create a hosted zone in DNS operations and we have to replace GoDaddy Naming servers with Aws Route53 hosted zone NS.
 
 at the time of creating hosted zone we will get 4 naming servers. if we want to manage AWS route53 hosted zone via GoDaddy we have to replace hosted zone naming servers in GoDaddy.
 
