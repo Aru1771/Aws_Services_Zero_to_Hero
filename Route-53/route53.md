@@ -22,7 +22,8 @@ In this case i have a domine name with text.xyz for that domine i want to create
 
 step:1  go to console and serch for route53 and click on Hostedzone.
 
-step:2  we get form we have to fill that
+step:2  we get form we have to fill that:
+
         1. Domine_Name: text.xyz
         2. description: 
         3. type: Public or Private --> select Public
@@ -33,8 +34,8 @@ Note: Before creating a Hosted Zone we have to purchase a domine from Dome provi
 * when i purchase a domine in Google domines at that time i will get default Name servers.
 * But we don't use these default Name Servers.
 * we have to use custome name servers fro our domine.
-* like in step 2 i have created a hosted zone for my domine at that time i will get New Name servers records in aws.
-* we have to copy those Name-servers from the Hosted Zone Provider like AWS and copy them into Domine registry website like google domine and past that into --> DNS --> UNDER custome name servers.
+* like in step 2 i have created a hosted zone for my domine at that time i will get New "Name servers" records in aws.
+* we have to copy those "Name-servers" from the Hosted Zone Provider like AWS and copy them into Domine registry website like google domine and past that into --> DNS --> UNDER custome name servers.
 * Then our domine use these custome NS. so the request will forworded to HostedZone in aws. 
 
 Now set up a "**A Records**":
@@ -47,13 +48,15 @@ in this case i am using EC2 instance
 * in A records we have lot of policies
   1.simple route
   2.weighted
-  3. latency
+  3.latency
+  4. failover
   and some more...
-* we are using simple route hear
-* Third click on "Define simple route"
-* subdomine: leave it empty because we are pointing to our main domine.
-* record type: route traffic to an IPV4 Address and some aws resources
-* Value: pass the EC2 public IP.
+* we are using *simple_routeing* hear
+* then click on "Define simple route"
+* Record_Name: leave it blank it is for subdomines we are doing hear for main domine
+* Recoed_type: *A record traffic to an IPV4 address and some AWS resource*
+* Value: pass the EC2 public IP. and click on *define simple record*
+* select the record and click in create record.
 
 Now we can see How to setup A Load balancer as a A-record simple Routing:
 --------------------------------------------------------------------------
@@ -65,9 +68,16 @@ Now we can see How to setup A Load balancer as a A-record simple Routing:
 * Then we have to launch the LB and we have to attch the target group with listner With HTTP and Port 80.
 
 Now the Route53 configration will start:
-* we have to create one more a Record with value Alias and App loadbalancer.
-* we have to give region
-* we have to select LB.
+* we have click on create records
+* there we can select "simple_routeing" and click on Next.
+* Record_Name: leave it blank it is for subdomines we are doing hear for main domine
+* Recoed_type: *A record traffic to an IPV4 address and some AWS resource*
+* Value: select type: Alisa to App and classic loadbalancer --> Region --> Load balancer.
+* click on *define simple record*
+* select the record and click in create record.
+ 
+
+
   
 Now we can see How to setup A two Load balancer in route 53 and how we can do weighted routing:
 -------------------------------------------------------------------------------------------------
@@ -82,22 +92,49 @@ Now we can see How to setup A two Load balancer in route 53 and how we can do we
 
 Now the Route53 configration will start:
 
-* For weigted routing we have to select Wetigted routing and the A record.
-* in the form we have to select "Define weight records".
-* Hera we have to give weight like 128 is 50% in 256.
-* RecordID: A record for Lb1 or LB2
+* we have click on create records
+* there we can select "Weighted" and click on Next
+* Record_Name: leave it blank it is for subdomines we are doing hear for main domine
+* Recoed_type: *A record traffic to an IPV4 address and some AWS resource*
+* Weighted records to add to <domine name> --> hear we have to click on *difine Weighted routing*
+* in the *difine Weighted routing* we have to choose the lb type as Alisa to App and classic loadbalancer --> Region--> Loadbalancer 
+* Hear we have to give weight like 128 is 50% in 256. Hear 256 is the 100% we have to divide the 256.
+* RecordID: A record for Lb1 or LB2.
+* Like above we have to add another *difine Weighted routing* for another Lb with weight 128% so traffic can be distribute equally to
+  Both the Load balancers.
+* once both the Weighted routing's were created we have to select the both and click on create records
 
-we have to select both the records and create a A records.
+
 
 Now we can see How to setup A two Load balancer in route 53 and how we can do geolocation routing:
 ---------------------------------------------------------------------------------------------------
-
 * By using this we can send the particular location request to specific loadbalancer.
+* we can use the same two LB  setup for this geolocation routing. simply delete the Weighted records and click on create records.
+* Select geolocation routing.
+* Record_Name: leave it blank it is for subdomines we are doing hear for main domine.
+* Recoed_type: *A record traffic to an IPV4 address and some AWS resource*
+* in the field geolocation records to add to <domine name>--> click on *define geolocation record*
+* in the *difine geolocation record* we have to choose the lb type as Alisa to App and classic loadbalancer --> Region--> Loadbalancer.
+* Location: any of the required location from where we need to make the request
+* RecordID: request from the region.
+* like above we have to add another *define geolocation record* in there we can selection another region.
+* once both the geolocation record's  were created we have to select the both and click on create records.
+
 
 Now we can see How to setup A two Load balancer in route 53 and how we can do geolocation routing:
 --------------------------------------------------------------------------------------------------
 
 * By using this we will route the traffic to secondrey load balncer when primary load balncer is fail to serves the request.
+* we can use the same two LB  setup for this Filover record. simply delete the geolocation records and click on create records.
+* Select on Failover
+* Record_Name: leave it blank it is for subdomines we are doing hear for main domine.
+* Recoed_type: *A record traffic to an IPV4 address and some AWS resource*
+* in the field Failover records to add to <domine name>--> click on *define Failover record*
+* in the *difine Failover record* we have to choose the lb type as Alisa to App and classic loadbalancer --> Region--> Loadbalancer.
+* Filover type: Primary for LB-1
+* like above we have to add another *define Failover record* in there we can selection another LB-2 and give failover type is secondary.
+* once both the Failover record's  were created we have to select the both and click on create records.
+
   
 
 
