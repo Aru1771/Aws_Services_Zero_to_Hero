@@ -122,14 +122,14 @@ Day-4
 Storage Classes:
 ----------------
 
-1.frequent
+frequent
 -----------
 under frequent access we have:
 1. standard: data will store >=3 AZ, pay as you go, no min charges
 2. Reduces redundant storage (RRS) --> not recommended to use by AWS.
 
-2. infrequent access
-   ----------------------
+infrequent access
+----------------------
 under infrequent access we have:
 
 1. Standard infrequently access:
@@ -138,8 +138,8 @@ under infrequent access we have:
 2. one zone infrequently access:
    data will store only 1 AZ-- not recommended,if you want to download any of the object from this class we have to pay retrieval pay to AWS. it will charge for 28 days.min charges
    
-3. Archival
-   -------------
+Archival
+-------------
 
 under Archival storage we have:
 
@@ -158,8 +158,8 @@ under Archival storage we have:
    hear we have to wait 12 hours to download a file. it will charge for 180 days.min charges
 
 
-4. intelligent:
-   -----------------
+intelligent:
+-----------------
    data will store >=3 AZ, pay as you go. No min charges
 
 
