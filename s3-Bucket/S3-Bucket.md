@@ -129,7 +129,7 @@ under frequent access we have:
 2. Reduces redundant storage (RRS) --> not recommended to use by AWS.
 
 2. infrequent access
-----------------------
+   ----------------------
 under infrequent access we have:
 
 1. Standard infrequently access:
@@ -139,7 +139,7 @@ under infrequent access we have:
    data will store only 1 AZ-- not recommended,if you want to download any of the object from this class we have to pay retrieval pay to AWS. it will charge for 28 days.min charges
    
 3. Archival
--------------
+   -------------
 
 under Archival storage we have:
 
@@ -159,7 +159,7 @@ under Archival storage we have:
 
 
 4. intelligent:
------------------
+   -----------------
    data will store >=3 AZ, pay as you go. No min charges
 
 
