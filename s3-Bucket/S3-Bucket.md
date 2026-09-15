@@ -159,6 +159,7 @@ under Archival storage we have:
 
 
 4. intelligent:
+-----------------
    data will store >=3 AZ, pay as you go. No min charges
 
 
