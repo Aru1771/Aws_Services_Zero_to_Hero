@@ -15,15 +15,30 @@ Key Points:
             Customizable: Users can select the instance type and size that best suits their specific workload requirements.
 
 
-1. general purpose --> instances provides a balanced mix of compute, memory, and network resources. they are ideal for diverse workloads, like web services, code repositories, and when workload performance is uncertain.
+1. general purpose
+
+            instances provides a balanced mix of compute, memory, and network resources.
+            they are ideal for diverse workloads, like web services, code repositories, and when workload performance is uncertain.
   
-2. compute optimized --> instances are ideal for compute-intensive tasks, such as gaming servers, high performance computing(hpc), machine learning, and scientific modeling.
+4. compute optimized
 
-3. memory optimized --> instances are used for memory-intensive tasks like processing large datasets, data analytics and databases. they provides fast performance for memory-heavy work loads.
-
-4. accelerated computing --> instances use hardware accelerator, like graphics processing units(gpu's), to efficiently handle tasks, such as floating- calculations, graphics processing, and machine learning.
  
-5. storage optimized --> instances are designed for workloads that requires high performance for local storage, such as databases, data warehousing, and I/O-intensive applications.
+       instances are ideal for compute-intensive tasks, such as gaming servers, high performance computing(hpc), machine learning, and scientific modeling.
+
+7. memory optimized
+
+                  instances are used for memory-intensive tasks like processing large datasets, data analytics and databases.
+                  they provides fast performance for memory-heavy work loads.
+
+9. accelerated computing
+
+                  instances use hardware accelerator, like graphics processing units(gpu's), to efficiently handle tasks,
+                  such as floating- calculations, graphics processing, and machine learning.
+ 
+12. storage optimized
+
+         instances are designed for workloads that requires high performance for local storage,
+          such as databases, data warehousing, and I/O-intensive applications.
 
 cost optimization on EC2:
 =========================
