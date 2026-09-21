@@ -263,7 +263,14 @@ Use case in my project:
 * Real time we wll use SSE only defalt s3 key.
 
 
-              
+✅ AWS cli CMD:
+-----------------
+
+* We can copy the objects to bucket by using cp
+* if you want to upload a folder to s3 we have to use --recursive in the end.
+* after deleting the bucket we can create the bucket with deleted bucket name imedeatly in the same region.
+* But if you want to use that deleted bucket name in another region we have to wait one hour.
+  
                                   
        
 
