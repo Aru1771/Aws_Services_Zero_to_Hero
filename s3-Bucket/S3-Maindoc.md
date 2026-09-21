@@ -145,11 +145,125 @@ Versioing :
         the modified data the old file will be saved under versioning means we see latest file in objects tab. 
         if you want to see old file we can see underversioning.
 
-Use case in my project: for terrafrom state file.
+Use case in my project:
+
+      for terrafrom state file.
             
-                         
 
 
+✅ Bucket Policy in Amazon S3
+-------------------------------
+
+* if you want to restrict the access you can enable the policy hear. even if you have admin access but the bucket policy is denied we can't access the bucket.
+
+* so if user have access to put the objects to s3 at account level but at resource level policy if we are restricting it the user will not upload any files.
+
+* in user level policy user don't have access to upload the files to s3 bucket but at bucket level we provided the access to that user then he will able to
+  to upload the files to s3.
+
+* Final Point: Resource level policy have high Priority.
+
+
+Use case in my project: 
+
+
+       By using this we can only provide access to specific user in the orginizaation to access and perform the actions on that bucket.
+       Rest all users even the Admin users also can't access the bucket.
+
+
+✅ S3 Bucket Lifecycle
+-------------------------
+
+* By using this life cycle rule's we can move our bucket objects from one class to another class.
+
+* For that we have to create life cycle rule in bucket manegment tab.
+
+Go to --> Management Tab --> click on create rule:
+
+               Life cycle rule_name:
+               Chosee rule scope: always choose a folder in the bucket to apply this rule.
+                                  path like folder1/aws_logs/region/* ---> after a path we have to specify the region.
+                                  after region if any file or folder was created those will move to another class after 30 days.
+                                  /region will come for only vpc flow logs.
+              Object size: if you want we can specify
+
+              * Life cycle rule actions: select--> move current version of objects b/w storage class.
+
+              Transfer: chosse storage class and mentione the time frame
+              
+              Life cycle rule actions: if you want old versions of the file's --> select --> move nonconcurrent option for this option we have create another
+                                       Transfer like below.
+
+              Transfer: chosse storage class and mentione the time frame.
+              
+              * Life cycle rule actions: if you select --> expire current version of object.
+                                                         we have to specify the days then after that specied days the current file will be deleted.
+               Life cycle rule actions: if you select -- > Perminently delete non concurrnent the old versions will delete after the mentioned time frame
+
+                Life cycle rule actions: if you select --> delete incomple uploads --> we can delete those files after the mentioned time.
+
+* we mainly use this for vpc flow logs, app load balancer logs, aws waf logs, cloud trail logs. to reduce the cost.
+
+* This life cycle rules will apply every day 12:00 AM UTC time.
+
+
+
+✅ How to capture and upload the ALB logs to s3 bucket:
+-------------------------------------------------------
+
+Why we need this ALB logs ?
+
+* if an application is throwing an error meesage like 500 error and 404 errors at that time we have to check the ALB logs.
+* 500 error means health check.
+* at that point we have to check the application load balancer logs.
+
+
+Note: 
+   
+      1. we upload the ALB logs to S3 Bukcet we have to create a bucket at the same region.
+      2. we can able to captute logs for only ALB and Classic Load balancer because they are supporting HTTP and HTTPS.
+      3. We can't capture the logs for network load balancer because it will work on tcp Protocol. if you want the NLB logs we have to chck the vpc logs.
+
+
+* To setup a logs for ALM
+
+      Click on LB --> Actions --> Edit load balancer attributes --> under monitoring--> Access logs: Enble --> give s3 bucket ARN--> save and change it.
+
+* But before to do this we have update a polict at the bucket level to allow the alb to store his logs.
+
+       For that: Go to google and search for How to upload ALB logs to S3.
+
+       find the aws page and copy the policy and update it at bucket level
+
+        in polict edit the elb account id by refering the same docs.
+
+        after configure --in s3 --awslogs--account_num--testfile.
+
+
+Use case in my project: 
+
+       we always enable the ALB logs and store in s3.
+
+       How we can troble shoot who is storing in s3 ?
+
+       By using athena aws service.
+
+       we will store multiple lb logs in same s3.
+
+
+✅ Presigned URLs in AWS S3
+----------------------------
+
+* By useing this we can provide access to specify object in the bucket for the specified time to user.
+
+
+
+              
+                                  
+       
+
+
+  
 
 
 
