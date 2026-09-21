@@ -257,6 +257,11 @@ Use case in my project:
 * By useing this we can provide access to specify object in the bucket for the specified time to user.
 
 
+✅ Server-side encryption for Amazon S3 buckets
+-----------------------------------------------
+
+* Real time we wll use SSE only defalt s3 key.
+
 
               
                                   
