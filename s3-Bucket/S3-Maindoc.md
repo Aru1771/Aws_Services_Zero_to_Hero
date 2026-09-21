@@ -65,12 +65,14 @@ Types of Storage Classes in AWS S3
         One Zone-IA: Lower-cost option for infrequently accessed data that doesn't require multiple Availability Zone resilience.
         Glacier and Glacier Deep Archive: For archival data with retrieval times ranging from minutes to hours.
 
-Use case in my project: we store our vpc flow logs, waf logs, cloud trail logs,  ..ect in Standerd -IA class.
-                        Application logs, Application access logs and we have to check with dev team how frequently app access these logs based up on that we can set class.
+Use case in my project: 
+
+     we store our vpc flow logs, waf logs, cloud trail logs,  ..ect in Standerd -IA class.
+     Application logs, Application access logs and we have to check with dev team how frequently app access these logs based up on that we can set class.
                         
-                         after 30 days vpc flow logs, waf logs, cloud trail logs,  we move from Standerd-ai to galcier.
-                         because vpc flow logs, waf logs, cloud trail logs we have to maintain atleast 18 months.
-                         after 10 months old logs were deleted.
+     after 30 days vpc flow logs, waf logs, cloud trail logs,  we move from Standerd-ai to galcier.
+     because vpc flow logs, waf logs, cloud trail logs we have to maintain atleast 18 months.
+     after 10 months old logs were deleted.
 
 Now we can see the bucket creation:
 ------------------------------------
