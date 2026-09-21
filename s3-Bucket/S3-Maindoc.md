@@ -111,7 +111,9 @@ Click on create Bucket
 
 Objects Tab: hear we will see uploaded objects to that s3 bucket.
 
-Properties Tab: bucket region, Bucket arn, created date and Bucket version with edit options, Tags with edit option, defult encryption with edit option.
+Properties Tab: 
+  
+               bucket region, Bucket arn, created date and Bucket version with edit options, Tags with edit option, defult encryption with edit option.
                 *server access logs* -- if you enble this we can capture S3 bucket logs like uploading, deleting. it's chargable
                 *AWS Cloud trail logs* 
                 *Event notification*: we can send notifications based up on the events. we can apply this events to specific path(called prefix)
@@ -125,7 +127,9 @@ Managment: life cycle rules.
 
 
 
-Use case in my project: From AWS console are we able to download the folder like file ? 
+Use case in my project: 
+
+                       From AWS console are we able to download the folder like file ? 
                         No we can't download the folder from the aws console like file.
                         and we can't download the munltile objects as well from the console a time like selecting few files
 
@@ -133,8 +137,11 @@ Use case in my project: From AWS console are we able to download the folder like
 
 
 
-Versioing : By enabling this bucket versioning to s3 if we are uploading the same file agaian and again with the modified data the old file will be saved under versioning 
-            means we see latest file in objects tab. if you want to see old file we can see under versioning.
+Versioing :
+  
+       By enabling this bucket versioning to s3 if we are uploading the same file agaian and again with 
+        the modified data the old file will be saved under versioning means we see latest file in objects tab. 
+        if you want to see old file we can see underversioning.
 
 Use case in my project: for terrafrom state file.
             
