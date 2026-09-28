@@ -113,27 +113,70 @@ Now we can see the bucket creation:
 
 * After creating the bucket we see few things:
 
-Objects Tab: hear we will see uploaded objects to that s3 bucket.
+       Objects Tab:
 
-Properties Tab: 
+             hear we will see uploaded objects to that s3 bucket.
+
+      Properties Tab: 
   
-               bucket region, Bucket arn, created date and Bucket version with edit options, Tags with edit option, defult encryption with edit option.
+                 bucket region, Bucket arn, created date and Bucket version and MFA with edit options,ABAC Tags with edit option, defult encryption with edit                        option.
+  
                 *server access logs* -- if you enble this we can capture S3 bucket logs like uploading, deleting. it's chargable
                 *AWS Cloud trail logs* 
                 *Event notification*: we can send notifications based up on the events. we can apply this events to specific path(called prefix)
                                       we have destination option like lambda, SNS and SQS.
 
-Permissions Tab: public access with edit option, bucket policy with edit option.
+               * Bucket ABAC: It will give access based up on the tags.
 
-Bucket Metric: bucket size, no of objects
+                          Eg: if my bucket tag is team=devops, project=labops
+                              if my iam user have the same tag's  team=devops, project=labops.
+                              so now we can provide access to iam user to s3 bucket witH ABAC
 
-Managment: life cycle rules.
+                * Server access logging: if we enable this it will capture in bucket if we upload, delete the objects in bucket--> not use much
+
+                * Event notification:
+
+                  Event_name: 
+                  prefix: we have to specify a particulat folder haer for this event triggers.
+                          so if any thing happen in this mentioned folder then only the event will trigger
+                  
+                  suffix: like .txt, .jpj
+                  
+                  Event_Type: object creation, object removal, object ACL, object restore
+                  
+                  destination: will support 3 things SNS,SQS, LAMBDA.
+
+                  Requester pay: if any one using our s3 bucket objects we can set they will pay for the access.
+
+                 static hosting: hear we can setup static website hosting
+
+Use case in my project: 
+
+                 IN project these event triggers will be used for if some logs was generated and stored in s3.
+                 so by using this events like SNS, Lambda we will push those logs to looging system like Splunk.
+                 
+
+
+
+
+  
+                Permissions Tab: 
+                
+                     public access with edit option, bucket policy with edit option.
+
+                Bucket Metric Tab:
+                
+                     bucket size, no of objects
+
+                Managment: 
+                
+                     life cycle rules.
 
 
 
 Use case in my project: 
 
-                       From AWS console are we able to download the folder like file ? 
+                        From AWS console are we able to download the folder like file ? 
                         No we can't download the folder from the aws console like file.
                         and we can't download the munltile objects as well from the console a time like selecting few files
 
@@ -143,7 +186,7 @@ Use case in my project:
 
 Versioing :
   
-       By enabling this bucket versioning to s3 if we are uploading the same file agaian and again with 
+        By enabling this bucket versioning to s3 if we are uploading the same file agaian and again with 
         the modified data the old file will be saved under versioning means we see latest file in objects tab. 
         if you want to see old file we can see underversioning.
 
@@ -184,10 +227,12 @@ Go to --> Management Tab --> click on create rule:
 
                Life cycle rule_name:
                Chosee rule scope: always choose a folder in the bucket to apply this rule.
-                                  path like folder1/aws_logs/region/* ---> after a path we have to specify the region.
+                                  path like folder1/aws_logs/region/* ---> after a path we have to specify the region. this type of folder structure we will see
+                                  only when we set vpc flow logs to in s3.
                                   after region if any file or folder was created those will move to another class after 30 days.
-                                  /region will come for only vpc flow logs.
-              Object size: if you want we can specify
+                                  /region will come for only when we set vpc flow logs to in s3.
+              
+              Object size: if you want we can specify. like we can specify max and min size of objects.
 
               * Life cycle rule actions: select--> move current version of objects b/w storage class.
 
