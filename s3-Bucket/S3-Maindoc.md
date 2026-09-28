@@ -26,7 +26,9 @@ Real World use cases:
   2. Object
 
 
-Use case in my project: once used was generated the report's for the sample set those reports will be stored in s3 bucket when even they requesred these
+Use case in my project: 
+
+                        once used was generated the report's for the sample set those reports will be stored in s3 bucket when even they requesred these
                         reports comes from s3 bucket.
 
                         How it will work ?
@@ -77,37 +79,37 @@ Use case in my project:
 Now we can see the bucket creation:
 ------------------------------------
 
-Go to -- > s3 --> click on create bucket.
+            Go to -- > s3 --> click on create bucket.
 
-Region: we have to select.
+            Region: it will automatically fetch the region. if you want to change select the region from the right corner.
+            
+            Bucket Type: General/Directry -- > select General purpose
 
-Bucket Type: General/Directry -- > select General
+            Bucket Name: unique bucket name with small letters
 
-Bucket Name: unique bucket name with small letters
+            Copy settings from the exisiting buket: if you have any existing buket we can select hear those bucket setting will apply to this bucket setting
+                                                     to our new bucket.
 
-Copy settings from the exisiting buket: if you have any existing buket we can select hear those bucket setting will apply to this bucket.
-
-Object Ownership: ACL disable / ACL enable --> always select ACL disable
+            Object Ownership: ACL disable / ACL enable --> always select ACL disable
 
                   ACL: access control list
                   if you want to provide access to other AWS accounts we have to enable this acl.
                   if you don't want we can disable it.
 
-Block public access settings for this bucket: always disable it
+            Block public access settings for this bucket: always disable it
 
                   if you enable it every one who have our bucket URL will download the objects.
 
-Bucket Versioning: always enable
+            Bucket Versioning: always enable
 
-Default encryption: SSE-S3 , SSE-AWS kms, Dual SSE + AWS KMS ---> max we use SSE-S3
+            Default encryption: SSE-S3 , SSE-AWS kms, Dual SSE + AWS KMS ---> max we use (SSE-S3)
+
+            Bucket Key: if you're selecting AWS-KMS in above hear we will enable it.
+
+             object Locks: disable
 
 
-Bucket Key: if you're selecting AWS-KMS in above hear we will anable it.
-
-object Locks: disable
-
-
-Click on create Bucket
+             Click on create Bucket
 
 * After creating the bucket we see few things:
 
