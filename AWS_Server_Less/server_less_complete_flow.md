@@ -84,3 +84,7 @@ Aws Lambda Futures:
 
 <img width="1920" height="1200" alt="image" src="https://github.com/user-attachments/assets/e9e33ccd-e00d-453e-aca4-a2329954f216" />
 
+
+Aws Lambda Priceing:
+
+<img width="1900" height="856" alt="image" src="https://github.com/user-attachments/assets/d3e0adcb-9c2a-4339-9c80-31448b0c0d03" />
