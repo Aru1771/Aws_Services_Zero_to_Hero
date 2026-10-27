@@ -88,3 +88,44 @@ Aws Lambda Futures:
 Aws Lambda Priceing:
 
 <img width="1900" height="856" alt="image" src="https://github.com/user-attachments/assets/d3e0adcb-9c2a-4339-9c80-31448b0c0d03" />
+
+
+Aws Lambda Concurrency:
+
+<img width="1897" height="987" alt="image" src="https://github.com/user-attachments/assets/0bf37fbc-a111-4ef8-abb6-bf6294247f27" />
+
+<img width="1897" height="872" alt="image" src="https://github.com/user-attachments/assets/b6318723-1fc6-4f7e-bf38-97edfed413fe" />
+
+* Imagine you have an application called Empower, and your Lambda function processes login requests.
+
+<img width="953" height="553" alt="image" src="https://github.com/user-attachments/assets/5fefb846-1a8e-4831-ae8f-bddfc3796118" />
+
+* Concurrency means the number of Lambda requests being processed at the same time.
+
+* For example, if 10 requests are running simultaneously, concurrency is 10.
+
+* The approximate calculation is:
+
+<img width="756" height="65" alt="image" src="https://github.com/user-attachments/assets/2bc57bfc-98c1-4957-89e0-24c933064f46" />
+<img width="970" height="206" alt="image" src="https://github.com/user-attachments/assets/275ebc8c-690a-494d-80e0-ab6ade57f8a0" />
+
+2. Reserved Concurrency
+<img width="1010" height="852" alt="image" src="https://github.com/user-attachments/assets/1b39a184-4bf4-40df-bd8d-28e57e45bb66" />
+
+3. Provisioned Concurrency
+<img width="998" height="292" alt="image" src="https://github.com/user-attachments/assets/8ac79e3a-c848-4104-8c43-288ede84ae0d" />
+<img width="952" height="720" alt="image" src="https://github.com/user-attachments/assets/2d368076-d589-483e-a502-1be60b1003a9" />
+<img width="985" height="748" alt="image" src="https://github.com/user-attachments/assets/7808a0c4-66f8-40e4-96d6-f67c26bba8bf" />
+<img width="952" height="777" alt="image" src="https://github.com/user-attachments/assets/e098bda6-7d64-4ad2-ab88-ac8ac1170de9" />
+<img width="992" height="815" alt="image" src="https://github.com/user-attachments/assets/98262aec-91e8-484e-ac58-37631ddb085b" />
+
+6. What is Application Auto Scaling?
+<img width="1017" height="847" alt="image" src="https://github.com/user-attachments/assets/62282886-47e6-4fda-92f4-5528916127ea" />
+
+7. Understanding the concurrency diagram in your screenshot
+<img width="1010" height="396" alt="image" src="https://github.com/user-attachments/assets/42bc237d-b83e-42f9-be81-133cf5924f76" />
+
+
+
+
+
