@@ -136,3 +136,6 @@ Aws Lambda at EDGE:
 
 API-Application Programming Interface:
 
+<img width="1910" height="956" alt="image" src="https://github.com/user-attachments/assets/77c2a504-2f25-4e68-b506-78b43b23110c" />
+
+
