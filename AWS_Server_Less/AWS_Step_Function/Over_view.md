@@ -59,6 +59,25 @@ Let's consider an application deployment.
 
 <img width="997" height="651" alt="image" src="https://github.com/user-attachments/assets/f1ac4fcb-b7ea-4d3a-8bee-12b4376caa3e" />
 
-<img width="733" height="337" alt="image" src="https://github.com/user-attachments/assets/fe53dbd9-1c32-4b38-a551-10ae153140d6" />
+Core architecture and fundamentals:
+------------------------------------
+<img width="972" height="567" alt="image" src="https://github.com/user-attachments/assets/80c26f85-360d-4ff9-b358-56680b9827f0" />
+
+Workflow types:
+-----------------
+
+<img width="927" height="327" alt="image" src="https://github.com/user-attachments/assets/03cd8b2e-b342-490d-97c3-22236c8917cc" />
+
+State types:
+------------
+
+<img width="732" height="480" alt="image" src="https://github.com/user-attachments/assets/f0b21c34-9190-4afd-a543-32a2d767df14" />
+
+<img width="966" height="817" alt="image" src="https://github.com/user-attachments/assets/b6eed2cf-2081-4d34-a574-93589d7d5e7d" />
+
+<img width="977" height="328" alt="image" src="https://github.com/user-attachments/assets/c565c025-2e7c-43e4-9f77-5fdabd5c9196" />
+
+
+<img width="1010" height="731" alt="image" src="https://github.com/user-attachments/assets/083c6e60-8672-492f-9368-f782a10def43" />
 
 
