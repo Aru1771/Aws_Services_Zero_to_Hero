@@ -1,4 +1,4 @@
-<img width="997" height="651" alt="image" src="https://github.com/user-attachments/assets/2d2c44ce-322f-483f-b011-d5955ead5db3" />AWS Step Functions:
+AWS Step Functions:
 ==================
 
 <img width="995" height="598" alt="image" src="https://github.com/user-attachments/assets/b2ea45f3-cadc-4dc2-b2c4-59819b01f372" />
@@ -60,3 +60,5 @@ Let's consider an application deployment.
 <img width="997" height="651" alt="image" src="https://github.com/user-attachments/assets/f1ac4fcb-b7ea-4d3a-8bee-12b4376caa3e" />
 
 <img width="733" height="337" alt="image" src="https://github.com/user-attachments/assets/fe53dbd9-1c32-4b38-a551-10ae153140d6" />
+<img width="997" height="651" alt="image" src="https://github.com/user-attachments/assets/2d2c44ce-322f-483f-b011-d5955ead5db3" />
+
