@@ -84,5 +84,17 @@ Layer 2 – Data Link: Data Link Layer is responsible for transferring data betw
 Layer 1 – Physical: Transmits raw bits through physical media such as cables, radio signals and fibre.
 
 
+Now we can Talk About The Load Balancing:
+----------------------------------------
+
+* we can choose Load Balancer based on the two acpects.
+  1. on which layer we want to do Load Balancing
+  2. which load balancer we need to use for our application
+
+* if you want to perform the traffic load balancing on the layer 7--> we go with Application LB
+* if you want to perform the traffic load balancing on the layer 4--> we go with Network load B
+
+
+
 
 
