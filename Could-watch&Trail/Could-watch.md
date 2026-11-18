@@ -108,6 +108,12 @@ CloudWatch Agent:
 <img width="872" height="448" alt="image" src="https://github.com/user-attachments/assets/d6d59553-dbbe-49ca-8aba-82e6ecca608a" />
 
 
+<img width="700" height="545" alt="image" src="https://github.com/user-attachments/assets/15248a18-adda-410d-b8a3-a263b664a57e" />
+
+<img width="895" height="777" alt="image" src="https://github.com/user-attachments/assets/ea65385d-73e5-43d3-9e0c-bfde611b11c8" />
+
+
+
 Create a Log group in cloud watch:
 -----------------------------------
 
