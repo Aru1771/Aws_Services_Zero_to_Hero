@@ -99,6 +99,15 @@ Three important terms
 3. Log Event = An individual log record with a timestamp and message.
 
 
+<img width="688" height="442" alt="image" src="https://github.com/user-attachments/assets/1c0cf2ff-ccab-4bc9-85e9-35acd0ea1846" />
+
+
+
+
+
+
+
+
 
 CloudWatch Agent:
 -----------------
