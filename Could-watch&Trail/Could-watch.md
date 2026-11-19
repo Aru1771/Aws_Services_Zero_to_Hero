@@ -140,13 +140,14 @@ Create a Log group in cloud watch:
 Log group creation:
 -------------------
 
-Name: log group name
-Retention settings: hear we can select after how many days the logs will be delete: eg: 12 months --> means 12 months logs only available.
+* Name: log group name
+
+* Retention settings: hear we can select after how many days the logs will be delete: eg: 12 months --> means 12 months logs only available.
                     if you change the retention period time i will reflect after 73 hours.
 
-Log class: standerd
+* Log class: standerd
 
-KMS-keys: Optinal
+* KMS-keys: Optinal
 
 Tags: 
 
@@ -161,22 +162,22 @@ Tags:
 
 * First we have to go to VPC --> Flow_Logs--> click on create flow logs
 
-  Name: name of the flow logs
-  Filter: accept/reject/ all --> recomended is all
-  Maximum aggregation intervel: 10 min
-  Destination: send to cloudwatch
-  Destination log groups: select the log group which we have created above.
-  IAM role: Select the below created iam role
+      Name: name of the flow logs
+      Filter: accept/reject/ all --> recomended is all
+      Maximum aggregation intervel: 10 min
+      Destination: send to cloudwatch
+      Destination log groups: select the log group which we have created above.
+      IAM role: Select the below created iam role
 
-           to know about permissions--> click in info -- > VPC Flow Logs -- > Publish Flow logs to CW --> IAM role for Publish Flow logs to CW
+      to know about permissions--> click in info -- > VPC Flow Logs -- > Publish Flow logs to CW --> IAM role for Publish Flow logs to CW
 
-           we have to create a role with the policied available in the above page.
+      we have to create a role with the policied available in the above page.
 
-           first create a policy then create a role with that policy
+      first create a policy then create a role with that policy
 
-           at the time creating the role.
+      at the time creating the role.
 
-           Trusted entry--> aws services ---> use case--> EC2 ---> select the above permission policy and we have to attch the trush policy which is
+      Trusted entry--> aws services ---> use case--> EC2 ---> select the above permission policy and we have to attch the trush policy which is
             mentioned in the same policy tab for this iam role.
 
 Note:
